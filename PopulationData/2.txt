@@ -1,0 +1,4 @@
+data = LOAD 'hdfs://localhost:9000/pig_data/Pop_data.csv' USING PIGSTORAGE(',') AS (sl:int, district:chararray, state:chararray, pop:chararray, growth:chararray, sex_ratio:chararray, literacy:chararray);
+data_group = GROUP data BY state;
+data_group_count = FOREACH data_group GENERATE COUNT(data.pop);
+STORE data_group_count INTO 'output.txt';
