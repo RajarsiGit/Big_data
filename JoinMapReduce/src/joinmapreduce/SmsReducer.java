@@ -42,7 +42,7 @@ public class SmsReducer extends MapReduceBase implements Reducer<Text, Text, Tex
    private void loadDeliveryStatusCodes() {
 	   String strRead;
 	   try {
-		   BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Administrator\\eclipse-workspace\\JoinMapReduce\\DeliveryStatusCodes.txt"));
+		   BufferedReader reader = new BufferedReader(new FileReader("D://Big_data//JoinMapReduce//DeliveryStatusCodes.txt"));
 		   while ((strRead = reader.readLine() ) != null) {
 			   String splitarray[] = strRead.split(",");
 			   DeliveryCodesMap.put(splitarray[0].trim(), splitarray[1].trim());

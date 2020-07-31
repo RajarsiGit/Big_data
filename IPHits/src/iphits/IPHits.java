@@ -53,7 +53,7 @@ public class IPHits {
 
     public static void main(String[] args) throws Exception {
 	Configuration conf = new Configuration();
-	Job job = new Job(conf, "Word Count Average");
+	Job job = Job.getInstance(conf, "Word Count Average");
 	job.setJarByClass(IPHits.class);
 	job.setMapperClass(IPHitsMapper.class);
 	job.setReducerClass(IPHitsReducer.class);

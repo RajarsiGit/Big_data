@@ -55,7 +55,7 @@ public class WordCountAverage {
 
     public static void main(String[] args) throws Exception {
 	Configuration conf = new Configuration();
-	Job job = new Job(conf, "Word Count Average");
+	Job job = Job.getInstance(conf, "Word Count Average");
 	job.setJarByClass(WordCountAverage.class);
 	job.setMapperClass(WCAMapper.class);
 	job.setReducerClass(WCAReducer.class);
